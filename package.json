@@ -1,0 +1,31 @@
+{
+  "name": "mcp-pdf-modesty",
+  "version": "1.0.0",
+  "description": "MCP server for PDF text extraction using pdf2json",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "pdf",
+    "pdf2json",
+    "text-extraction"
+  ],
+  "author": "Rose",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "pdf2json": "^3.1.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  },
+  "bin": {
+    "mcp-pdf-modesty": "./dist/index.js"
+  }
+}
