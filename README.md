@@ -19,15 +19,55 @@ All PDF parsing functionality is provided by pdf2json. This project simply wraps
 
 ## Installation
 
+### From npm (when published)
+
 ```bash
 npm install mcp-pdf-modesty
 ```
 
+### From source
+
+1. Clone the repository:
+```bash
+git clone https://github.com/lh/mcp-pdf-modesty.git
+cd mcp-pdf-modesty
+```
+
+2. Install dependencies and build:
+```bash
+npm install
+npm run build
+npm link
+```
+
 ## Usage
+
+### In Claude Code
+
+After building and linking from source, add the server to Claude Code:
+
+```bash
+claude mcp add mcp-pdf-modesty mcp-pdf-modesty
+```
+
+Then restart Claude Code for the server to be available.
 
 ### In Claude Desktop
 
 Add to your `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "pdf": {
+      "command": "node",
+      "args": ["/path/to/mcp-pdf-modesty/dist/index.js"]
+    }
+  }
+}
+```
+
+Or if installed from npm:
 
 ```json
 {
