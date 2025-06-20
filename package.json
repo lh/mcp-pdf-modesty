@@ -6,7 +6,14 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsx src/index.ts",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint src --ext .ts",
+    "lint:fix": "ESLINT_USE_FLAT_CONFIG=false eslint src --ext .ts --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "typecheck": "tsc --noEmit"
   },
   "keywords": [
     "mcp",
@@ -16,12 +23,32 @@
   ],
   "author": "Rose",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lh/mcp-pdf-modesty.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lh/mcp-pdf-modesty/issues"
+  },
+  "homepage": "https://github.com/lh/mcp-pdf-modesty#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.4",
     "pdf2json": "^3.1.6"
   },
   "devDependencies": {
-    "@types/node": "^22.10.5",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22.15.32",
+    "@typescript-eslint/eslint-plugin": "^8.34.1",
+    "@typescript-eslint/parser": "^8.34.1",
+    "eslint": "^9.29.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.5.0",
+    "jest": "^30.0.2",
+    "prettier": "^3.5.3",
+    "ts-jest": "^29.4.0",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2"
   },
